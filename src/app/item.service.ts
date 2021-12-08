@@ -29,5 +29,10 @@ export class ItemService {
     return this.http.post<Item>(this.itemUrl,item)
   }
 
+  updateItem(item:Item):Observable<Item>{
+    const url = `${this.itemUrl}/${item._id}`
+    return this.http.put<Item>(url,item)
+  }
+
   constructor(private http:HttpClient) { }
 }

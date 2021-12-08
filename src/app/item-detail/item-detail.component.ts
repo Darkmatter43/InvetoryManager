@@ -13,6 +13,7 @@ export class ItemDetailComponent implements OnInit {
 
   @Input() item?:Item;
   @Output() onDeleteItem:EventEmitter<Item>=new EventEmitter()
+  @Output() onEditItem:EventEmitter<Item>=new EventEmitter()
   
   constructor(private itemService:ItemService) { }
 
@@ -22,7 +23,15 @@ export class ItemDetailComponent implements OnInit {
   onDelete(item:Item){
     this.onDeleteItem.emit(item)
   }
-
+  onEdit(item:Item){
+    const updatedItem = {
+      _id:null,
+      name:this.item?.name,
+      description:this.item?.description,
+      qty:this.item?.qty
+    }
+    this.onEditItem.emit(item)
+  }
   // deleteItem(item:Item){
   //   this.itemService.deleteItem(item).subscribe(()=>this.items=this.items.filter(p=>p._id !==item._id))
   // }
