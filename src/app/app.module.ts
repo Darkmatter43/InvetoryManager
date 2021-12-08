@@ -11,13 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsComponent,
     ItemDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,10 @@
 <h2>My Items</h2>
 <ul class="items">
     <li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]= "item===selectedItem">
-        <span class='badge'>{{item.id}}</span> {{item.name}}
+        {{item.name}}<br/>
+        {{item.description}}<br/>
+        Quantity: {{item.qty}}
     </li>
 </ul>
 
-<app-item-detail [item]="selectedItem"></app-item-detail>
-
-
-<!-- <h2>{{item.name | uppercase}}</h2>
-<div><span>id: </span>{{item.id}}</div>
-<div><span>description: </span>{{item.description}}</div>
-<div><span>quantity:</span>{{item.qty}}</div>
-
-<div>
-    <label for="name">Item name: </label>
-    <input id="name" [(ngModel)]="item.name" placeholder="name">
-</div> -->
-
+<app-item-detail *ngIf="selectedItem" [item]="selectedItem" (onDeleteItem)="deleteItem(selectedItem)"></app-item-detail>

@@ -1,12 +1,18 @@
-<h2>Top Items</h2>
-<div class='items-menu'>
-    <a *ngFor="let item of items">
-        {{item.name}}
-    </a>
-</div>
 <h2>Add Item</h2>
 <div>
-    <form>
-        
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="Add Item">
+        </div>
+        <div class="form-control">
+            <label for="description">Description</label>
+            <input type="text" name="description" [(ngModel)]="description" id="description" placeholder="Add Description">
+        </div>
+        <div class="form-control">
+            <label for="qty">Quantity</label>
+            <input type="number" name="qty" [(ngModel)]="qty" id="qty" placeholder="Add Quantity">
+        </div>
+        <input type="submit" value="Save Item" class="btn">
     </form>
 </div>

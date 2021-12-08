@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Item} from '../item'
-import {ITEMS} from '../mock-items'
 import { ItemService } from '../item.service';
 
 @Component({
@@ -20,11 +19,15 @@ export class ItemsComponent implements OnInit {
   }
 
   items:Item[]=[];
-
+  
   constructor(private itemService:ItemService) { }
 
   ngOnInit(): void {
-    this.getItems();
+    this.itemService.getItems().subscribe((items)=>(this.items=items));
+  }
+
+  deleteItem(item:Item){
+    this.itemService.deleteItem(item).subscribe(()=>(this.items = this.items.filter(i=>i._id !== item._id)));
   }
 
 }
