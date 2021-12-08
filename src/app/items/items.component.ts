@@ -16,7 +16,7 @@ export class ItemsComponent implements OnInit {
   }
 
   getItems():void{
-    this.items=this.itemService.getItems();
+    this.itemService.getItems().subscribe(items => this.items=items);
   }
 
   items:Item[]=[];
