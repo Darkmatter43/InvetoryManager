@@ -1,7 +1,6 @@
-<div *ngIf="item">
+<div *ngIf="item" class='edit-form'>
     <h2>Edit {{item.name | uppercase}}</h2>
-    <form (ngSubmit)="onEdit($event)">
-        <div><span>id: </span>{{item._id}}</div>
+    <form (ngSubmit)="onEdit($event)" class='form-control'>
         <div>
         <label for="name">Item name: </label>
         <input name="name" id="name" [(ngModel)]="item.name" placeholder="name"><br/>
@@ -10,7 +9,7 @@
         <label for="qty">Item quantity: </label>
         <input name="qty" type="number" id="qty" [(ngModel)]="item.qty" placeholder="qty">
         </div>
-        <input type='submit' Value='Make Changes'>
+        <input type='submit' Value='Make Changes' class="btn">
     </form>
     
     <app-button text='Delete' (click)='onDelete(item)'></app-button>

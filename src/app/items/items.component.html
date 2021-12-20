@@ -1,10 +1,11 @@
 <h2>My Items</h2>
 <ul class="items">
     <li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]= "item===selectedItem">
-        {{item.name}}<br/>
+        <h3>{{item.name | uppercase}}</h3><br/>
         {{item.description}}<br/>
         Quantity: {{item.qty}}
     </li>
+    <hr>
 </ul>
 
 <app-item-detail *ngIf="selectedItem" [item]="selectedItem" (onDeleteItem)="deleteItem(selectedItem)" (onEditItem)="editItem(selectedItem)"></app-item-detail>

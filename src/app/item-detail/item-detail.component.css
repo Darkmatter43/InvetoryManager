@@ -1,0 +1,22 @@
+*{
+    --main-bg-color:#1A1A1D;
+    --grey:#4E4E50;
+    --dark-red:#6F2232;
+    --mid-red:#950740;
+    --bright-red:#C3073F;
+}
+.form-control{
+    font-size:20px;
+    margin:0.5em;
+}
+.form-control input{
+    display: flex;
+    background-color:var(--grey);
+}
+.btn{
+    padding:0.5em;
+    margin:0.5em;
+    /* No idea why, but the background color here does not actually change the color of the button the way it does for the dashboard's submit button */
+    background-color: var(--bright-red);
+    color:white;
+}

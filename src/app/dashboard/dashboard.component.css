@@ -1,0 +1,14 @@
+.form-control{
+    font-size:20px;
+    margin:0.5em;
+}
+.form-control input{
+    display: flex;
+    background-color:var(--grey);
+}
+.btn{
+    padding:0.5em;
+    margin:0.5em;
+    background-color: var(--bright-red);
+    color:white;
+}

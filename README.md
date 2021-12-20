@@ -1,5 +1,5 @@
 # InvetoryManager
-My final project as a student at General Assembly
+My final project as a student at General Assembly. The live link is: https://protected-brook-26019.herokuapp.com/dashboard 
 
 ## Ideas for now:
 inventory management?
